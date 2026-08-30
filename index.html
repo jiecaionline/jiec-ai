@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jie Cai</title>
+  <meta name="description" content="Jie Cai — data scientist in San Francisco. Third-culture kid from Shanghai." />
+  <link rel="icon" href="assets/llama.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=19" />
+</head>
+<body>
+  <main class="wrap">
+    <section id="about">
+      <div class="about">
+        <div class="about-copy">
+          <h1>👋 Hi, I'm Jie!</h1>
+          <p>I'm a Chinese-American raised as a third-culture kid in Shanghai. Now, I live in San Francisco and work as a Data Scientist. Creative experimenter, both in work and life.</p>
+        </div>
+        <div class="media-frame portrait-frame">
+          <img class="portrait" src="assets/profile.jpg" alt="Portrait of Jie Cai" />
+        </div>
+      </div>
+    </section>
+
+    <section id="experiences">
+      <h2>Experiences</h2>
+      <ul class="experience-list">
+        <li><span class="exp-label">Cities</span> 📍 <strong>San Francisco</strong>. Prior: Shanghai, Seattle, Hong Kong</li>
+        <li><span class="exp-label">Work</span> 📍 <strong>Data @ Google Deepmind</strong>. Prior: Robinhood (x2), OpenSea, Airbnb</li>
+        <li><span class="exp-label">Education</span> Duke University: B.S. in Computer Science, Statistics, Visual Media Studies</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <h3>Data / Code</h3>
+      <div class="rail-wrap">
+        <button class="rail-btn prev" type="button" aria-label="Scroll projects left">‹</button>
+        <div class="rail">
+          <button class="tile" type="button" data-project="robinhood-whm">
+            <div class="media-frame">
+              <img class="tile-photo" src="assets/projects/robinhood-whm.png" alt="" />
+            </div>
+            <p class="tile-title">Robinhood Women Investors</p>
+            <p class="tile-sub">Women's History Month, 2021</p>
+          </button>
+          <button class="tile" type="button" data-project="covis19">
+            <div class="media-frame wordmark">
+              <div class="tile-wordmark" aria-hidden="true">COVIS-19</div>
+            </div>
+            <p class="tile-title">COVIS-19 Dashboard</p>
+            <p class="tile-sub">Duke Datafest, 2020</p>
+          </button>
+          <button class="tile" type="button" data-project="credit-sesame">
+            <div class="media-frame">
+              <img class="tile-photo" src="assets/projects/credit-sesame.png" alt="" />
+            </div>
+            <p class="tile-title">Credit Sesame Adoption</p>
+            <p class="tile-sub">Duke Datathon, 2018</p>
+          </button>
+          <button class="tile" type="button" data-project="ye-nlp">
+            <div class="media-frame">
+              <img class="tile-photo" src="assets/projects/ye-nlp-cover.jpg" alt="" />
+            </div>
+            <p class="tile-title">Ye-NLP Reviews</p>
+            <p class="tile-sub">Yelp Dataset Challenge, 2018</p>
+          </button>
+        </div>
+        <button class="rail-btn next" type="button" aria-label="Scroll projects right">›</button>
+      </div>
+
+      <h3>Art / Design</h3>
+      <div class="rail-wrap">
+        <button class="rail-btn prev" type="button" aria-label="Scroll projects left">‹</button>
+        <div class="rail">
+          <button class="tile" type="button" data-project="peaches">
+            <div class="media-frame">
+              <img class="tile-photo" src="assets/projects/peaches-logo.gif" alt="" />
+            </div>
+            <p class="tile-title">Peaches the Calico Cat</p>
+            <p class="tile-sub">Photography + NFTs, 2022</p>
+          </button>
+          <button class="tile" type="button" data-project="great-pretender">
+            <div class="media-frame">
+              <img class="tile-photo" src="assets/projects/cats-cover.jpg" alt="" />
+            </div>
+            <p class="tile-title">Great Pretender Cats</p>
+            <p class="tile-sub">Oil on Canvas, 2020</p>
+          </button>
+          <button class="tile" type="button" data-project="bull-city">
+            <div class="media-frame">
+              <img class="tile-photo" src="assets/projects/bull-city-cover.png" alt="" />
+            </div>
+            <p class="tile-title">Bull City Garden Logo</p>
+            <p class="tile-sub">Digital Vector, 2020</p>
+          </button>
+        </div>
+        <button class="rail-btn next" type="button" aria-label="Scroll projects right">›</button>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:jiecaionline@gmail.com">Gmail</a>
+        + Socials (including
+        <a href="https://www.linkedin.com/in/jiecaionline" target="_blank" rel="noreferrer">Linkedin</a>,
+        <a href="https://github.com/jiecaionline" target="_blank" rel="noreferrer">Github</a>)
+        @jiecaionline
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-credit">
+      <span>Made with</span>
+      <span class="rotating-emoji" aria-hidden="true">
+        <span>❤️</span>
+        <span>🍵</span>
+        <span>🤖</span>
+      </span>
+      <span class="sr-only">heart, tea, and robots</span>
+      <span>by Jie Cai</span>
+      <span aria-hidden="true">🦙</span>
+    </p>
+  </footer>
+
+  <div class="modal" id="project-modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <button class="modal-nav prev" type="button" aria-label="Previous project">‹</button>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+      <h1 id="modal-title"></h1>
+      <p class="lede" id="modal-lede"></p>
+      <p class="modal-links" id="modal-links" hidden></p>
+      <div class="prose" id="modal-prose"></div>
+      <div class="modal-gallery" id="modal-gallery"></div>
+    </div>
+    <button class="modal-nav next" type="button" aria-label="Next project">›</button>
+  </div>
+
+  <script src="js/projects.js?v=16"></script>
+</body>
+</html>
