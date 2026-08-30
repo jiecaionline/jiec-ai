@@ -57,12 +57,12 @@ const projects = {
     title: "Bull City Community Garden Logo",
     lede: "Digital Vector, 2020",
     html: `<p>I designed a logo for Bull City Community Garden (collaboration between Sustainable Duke and the city of Durham, NC). The logo incorporates Durham's iconic "Bull City" hand gesture. The logo was first drawn on my iPad using Procreate, then translated into a vector using Adobe Illustrator.</p>
-      <p>The logo is featured on Bull City Community Garden's <a href="https://twitter.com/bullcitygarden" target="_blank" rel="noreferrer">Twitter</a> account page.</p>`,
+      <p>The logo is featured on Bull City Community Garden's <a href="https://X.com/bullcitygarden" target="_blank" rel="noreferrer">X</a> account page.</p>`,
     images: [
       { src: "assets/projects/bull-city-black.jpg", alt: "Bull City Community Garden logo, black" },
       { src: "assets/projects/bull-city-green.jpg", alt: "Bull City Community Garden logo, green" },
     ],
-    links: [{ href: "https://twitter.com/bullcitygarden", label: "Twitter" }],
+    links: [{ href: "https://X.com/bullcitygarden", label: "X" }],
   },
 };
 

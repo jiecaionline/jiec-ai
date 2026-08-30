@@ -15,7 +15,8 @@ const spotifyAlbumIds = Object.freeze([
   "22MbdINYz4lQ1Y087qG7YO",
   "392p3shh2jkxUxY2VHvlH8",
   "08ipn1MH7xqgoqhUbtvCTy",
-  "46jYkyZi8Ql9jfuJ2IQ8vF"
+  "46jYkyZi8Ql9jfuJ2IQ8vF",
+  "2gwNU1WsZEOcCSyKHsXKs5"
 ]);
 
 const albumEmbed = document.querySelector("#album-embed");
