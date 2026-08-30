@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-
 :root {
   --bg: #ffffff;
   --text: #111111;
   --muted: #5f6368;
-  --faint: #9aa0a6;
-  --line: #e8eaed;
   --placeholder: #f1f3f4;
   --overlay: rgba(0, 0, 0, 0.55);
   --width: 720px;
@@ -15,8 +11,6 @@
 }
 
 * { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -45,7 +39,6 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
   padding: 56px 0 96px;
   container-type: inline-size;
-  container-name: page;
   --rail-cols: 4;
 }
 
@@ -258,12 +251,6 @@ h3 {
   outline-offset: 3px;
 }
 
-.tile-photo.placeholder {
-  display: grid;
-  place-items: center;
-  font-size: 40px;
-}
-
 .random-heading {
   display: flex;
   align-items: center;
@@ -359,18 +346,6 @@ h3 {
   color: var(--muted);
   line-height: 1.4;
 }
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.contact-links a { text-decoration: none; }
-.contact-links a:hover { text-decoration: underline; }
 
 .modal {
   position: fixed;

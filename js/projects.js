@@ -89,8 +89,7 @@ function renderLinks(project) {
   const items = project.links
     .map((link) => `<a href="${link.href}" target="_blank" rel="noreferrer">${link.label}</a>`)
     .join(", ");
-  const label = project.linksLabel ? `${project.linksLabel}: ` : "";
-  linksEl.innerHTML = `🔗 ${label}${items}`;
+  linksEl.innerHTML = `🔗 ${items}`;
   linksEl.hidden = false;
 }
 
