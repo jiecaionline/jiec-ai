@@ -264,6 +264,67 @@ h3 {
   font-size: 40px;
 }
 
+.random-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.random-heading h3 { margin: 0; }
+
+.surprise-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.surprise-button:hover { color: var(--text); }
+
+.surprise-button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.surprise-button svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.surprise-button.is-refreshing svg {
+  animation: refresh-spin 0.4s ease;
+}
+
+.album-embed {
+  margin-top: 10px;
+  min-height: 152px;
+}
+
+.album-embed iframe {
+  display: block;
+  width: 100%;
+  height: 152px;
+  border: 0;
+  border-radius: 12px;
+}
+
+@keyframes refresh-spin {
+  to { transform: rotate(360deg); }
+}
+
 .media-frame.wordmark {
   display: grid;
   place-items: center;
