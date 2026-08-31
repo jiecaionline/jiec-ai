@@ -8,7 +8,7 @@ const projects = {
     links: [{ href: "https://github.com/jiecai1997/duke-datathon-2018-team-22", label: "Github" }],
   },
   "robinhood-whm": {
-    title: "Robinhood WHM Data Publications",
+    title: "Robinhood Women Investors, Data-Driven Publications",
     lede: "Robinhood Women's History Month, 2021",
     html: `<p>I created data narratives for articles published during Robinhood's 2021 Women's History Month, focusing on the growth and financial empowerment of Robinhood's women customers. These articles received media coverage from news outlets such as Bloomberg.</p>
       <p>I worked cross-functionally with communications, legal and business operation teams to construct narratives, gather data points and review writing to ensure quality content.</p>
@@ -20,15 +20,15 @@ const projects = {
     ],
   },
   "ye-nlp": {
-    title: "Ye-nlp, NLP Powered Yelp Reviews",
+    title: "Ye-NLP, NLP Powered Yelp Reviews",
     lede: "Yelp Dataset Challenge, 2018",
     html: `<p>A few peers and I developed a Flask web-app that uses NLP to generate sentiment based ratings for existing Yelp reviews and custom user-input text.</p>
-      <p>MYelp includes category-specific ratings broken down by food, ambiance, price and service. The ratings are applied both to real restaurant reviews (provided by the <a href="https://www.yelp.com/dataset" target="_blank" rel="noreferrer">Yelp Open Dataset</a>), as well as custom reviews that users can input within the web-app.</p>`,
+      <p>Ye-NLP includes category-specific ratings broken down by food, ambiance, price and service. The ratings are applied both to real restaurant reviews (provided by the <a href="https://www.yelp.com/dataset" target="_blank" rel="noreferrer">Yelp Open Dataset</a>), as well as custom reviews that users can input within the web-app.</p>`,
     images: [{ src: "assets/projects/ye-nlp.png", alt: "Ye-nlp app screenshot" }],
     links: [{ href: "https://github.com/taranagar/yelp-review-challenge", label: "Github" }],
   },
   covis19: {
-    title: "COVIS19, COVID19 Interactive Dashboard",
+    title: "COVIS-19, COVID-19 Interactive Dashboard",
     lede: "Duke University ASA Datafest, 2020",
     html: `<p>I created an interactive data visualization web-app that allows users to explore the health and financial effects of COVID-19 in the US throughout 2020. My project won <em>Best Interactive Dashboard</em> at Duke University ASA Datafest 2020 (virtual)🏆. The web-app is built in Python, using <a href="https://plotly.com/dash/" target="_blank" rel="noreferrer">Dash by Plotly</a>.</p>`,
     images: [
@@ -40,7 +40,7 @@ const projects = {
   "great-pretender": {
     title: "Great Pretender Cats Painting",
     lede: "Oil on Canvas, 2020",
-    html: `<p>I painted 3 cats from the ending credits of <a href="https://en.wikipedia.org/wiki/Great_Pretender_(TV_series)" target="_blank" rel="noreferrer">Great Pretender</a>, a Japanese comedy/crime anime series. The painting won some wine + amazon gift card awards within Robinhood data team's art competition, and was gifted as a present.</p>`,
+    html: `<p>I painted 3 cats from the ending credits of <a href="https://en.wikipedia.org/wiki/Great_Pretender_(TV_series)" target="_blank" rel="noreferrer">Great Pretender</a>, a Japanese comedy/crime anime series. The painting was gifted as a present, and won some wine + amazon gift card awards within Robinhood data team's art competition.</p>`,
     images: [{ src: "assets/projects/cats.jpg", alt: "Great Pretender cats oil painting" }],
     links: [],
   },
