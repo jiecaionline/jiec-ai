@@ -83,7 +83,7 @@ h2 + h3 { margin-top: 0; }
 .about {
   display: grid;
   grid-template-columns: 1fr var(--tile-size);
-  gap: 24px;
+  gap: 40px;
   align-items: start;
 }
 
