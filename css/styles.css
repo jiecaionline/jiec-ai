@@ -94,7 +94,7 @@ h2 + h3 { margin-top: 0; }
 .about-copy { min-width: 0; }
 
 .about h1 {
-  margin: 0 0 36px;
+  margin: 0 0 24px;
   font-family: var(--sans);
   font-size: 35px;
   font-weight: 700;
