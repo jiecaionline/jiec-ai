@@ -2,14 +2,14 @@ const projects = {
   "credit-sesame": {
     title: "Credit Sesame Adoption",
     lede: "ML + Analysis, 2018",
-    html: `<p>I lead a team of 3 to analyze and predict Credit Sesame's product adoption for new users 30 days within signing up. Won <em>1st place</em> out of 43 teams in Duke Datathon 2018🏆.</p>
+    html: `<p>I lead a team of 3 to analyze and predict Credit Sesame's product adoption for new users 30 days within signing up. Won 1st place out of 43 teams in Duke Datathon 2018🏆.</p>
       <p>We built a Python Scikit-Learn random forest classifier to predict product adoption probabilities for new users (AUC ROC 0.71), used the model's feature importances to construct a Tableau dashboard visualizing differences between adopters vs non-adopters, and presented a holistic analysis + prediction model using the above.</p>`,
     images: [],
     links: [{ href: "https://github.com/jiecai1997/duke-datathon-2018-team-22", label: "Github" }],
   },
   "robinhood-whm": {
     title: "Robinhood Women Investors",
-    lede: "Publication, 2021",
+    lede: "Publications, 2021",
     html: `<p>I created data narratives for articles published during Robinhood's 2021 Women's History Month, focusing on the growth and financial empowerment of Robinhood's women customers. These articles received media coverage from news outlets such as Bloomberg.</p>
       <p>I worked cross-functionally with communications, legal and business operation teams to construct narratives, gather data points and review writing to ensure quality content.</p>
       <div class="callout">The number of women Robinhood customers nearly quadrupled between February 2020 and February 2021. In other words, that is a 369 percent year-over-year increase in women using the Robinhood platform, and now women make up nearly 30 percent of active Robinhood customers.</div>`,
@@ -30,7 +30,7 @@ const projects = {
   covis19: {
     title: "COVIS-19",
     lede: "Web App, 2020",
-    html: `<p>I created an interactive data visualization web app that allows users to explore the health and financial effects of COVID-19 in the US throughout 2020. My project won <em>Best Interactive Dashboard</em> at Duke University ASA Datafest 2020 (virtual)🏆. The web app is built in Python, using <a href="https://plotly.com/dash/" target="_blank" rel="noreferrer">Dash by Plotly</a>.</p>`,
+    html: `<p>I created an interactive data visualization web app that allows users to explore the health and financial effects of COVID-19 in the US throughout 2020. My project won Best Interactive Dashboard at Duke University ASA Datafest 2020 (virtual)🏆. The web app is built in Python, using <a href="https://plotly.com/dash/" target="_blank" rel="noreferrer">Dash by Plotly</a>.</p>`,
     images: [
       { src: "assets/projects/covis19-health.png", alt: "COVIS19 health dashboard" },
       { src: "assets/projects/covis19-finance.png", alt: "COVIS19 finance dashboard" },
