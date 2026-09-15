@@ -9,14 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=27" />
+  <link rel="stylesheet" href="css/styles.css?v=55" />
 </head>
 <body>
   <main class="wrap">
     <section id="about">
       <div class="about">
         <div class="about-copy">
-          <h1>👋 Hi, I'm Jie!</h1>
+          <h1><span class="wave-emoji" aria-hidden="true">👋</span> <em>Hi</em>, I'm Jie!</h1>
           <p>I'm a Chinese-American raised as a third-culture kid in Shanghai. Now, I live in San Francisco and work as a Data Scientist. Creative experimenter, both in work and life.</p>
         </div>
         <div class="media-frame portrait-frame">
@@ -28,16 +28,24 @@
     <section id="experiences">
       <h2>Experiences</h2>
       <ul class="experience-list">
-        <li><span class="exp-label">Cities</span> 📍 <strong>San Francisco</strong>. Prior: Shanghai, Seattle, Hong Kong</li>
         <li>
-          <span class="exp-label">Work</span> 📍
-          <strong>Data @ <a href="https://www.linkedin.com/company/googledeepmind" target="_blank" rel="noreferrer">Google DeepMind</a></strong>.
-          Prior:
-          <a href="https://www.linkedin.com/company/robinhood/" target="_blank" rel="noreferrer">Robinhood</a> (x2),
-          <a href="https://www.linkedin.com/company/opensea-io" target="_blank" rel="noreferrer">OpenSea</a>,
-          <a href="https://www.linkedin.com/company/airbnb" target="_blank" rel="noreferrer">Airbnb</a>
+          <span class="exp-label">Cities</span>
+          <span class="exp-detail">📍 San Francisco. Prior: Shanghai, Seattle, Hong Kong</span>
         </li>
-        <li><span class="exp-label">Education</span> Duke University: B.S. in Computer Science, Statistics, Visual Media Studies</li>
+        <li>
+          <span class="exp-label">Work</span>
+          <span class="exp-detail">
+            📍 Data @ <a href="https://www.linkedin.com/company/googledeepmind" target="_blank" rel="noreferrer">Google DeepMind</a>.
+            Prior:
+            <a href="https://www.linkedin.com/company/robinhood/" target="_blank" rel="noreferrer">Robinhood</a> (x2),
+            <a href="https://www.linkedin.com/company/opensea-io" target="_blank" rel="noreferrer">OpenSea</a>,
+            <a href="https://www.linkedin.com/company/airbnb" target="_blank" rel="noreferrer">Airbnb</a>
+          </span>
+        </li>
+        <li>
+          <span class="exp-label">Education</span>
+          <span class="exp-detail">📚 <a href="https://www.duke.edu/" target="_blank" rel="noreferrer">Duke University</a>: B.S. in Computer Science, Statistics, Visual Media Studies</span>
+        </li>
       </ul>
     </section>
 
@@ -45,51 +53,48 @@
       <h2>Projects</h2>
 
       <h3>Data / Code</h3>
-      <div class="rail-wrap">
-        <button class="rail-btn prev" type="button" aria-label="Scroll projects left">‹</button>
-        <div class="rail">
+      <div class="project-grid-wrap">
+        <div class="project-grid">
           <button class="tile" type="button" data-project="robinhood-whm">
             <div class="media-frame">
               <img class="tile-photo" src="assets/projects/robinhood-whm.png" alt="" />
             </div>
             <p class="tile-title">Robinhood Women Investors</p>
-            <p class="tile-sub">Women's History Month, 2021</p>
+            <p class="tile-sub">Publication, 2021</p>
           </button>
           <button class="tile" type="button" data-project="covis19">
-            <div class="media-frame wordmark">
-              <div class="tile-wordmark" aria-hidden="true">COVIS-19</div>
+            <div class="media-frame emoji-frame">
+              <div class="tile-emoji" aria-hidden="true">😷</div>
             </div>
             <p class="tile-title">COVIS-19</p>
-            <p class="tile-sub">Duke Datafest, 2020</p>
+            <p class="tile-sub">Web App, 2020</p>
           </button>
           <button class="tile" type="button" data-project="credit-sesame">
             <div class="media-frame">
               <img class="tile-photo" src="assets/projects/credit-sesame.png" alt="" />
             </div>
             <p class="tile-title">Credit Sesame Adoption</p>
-            <p class="tile-sub">Duke Datathon, 2018</p>
+            <p class="tile-sub">ML + Analysis, 2018</p>
           </button>
           <button class="tile" type="button" data-project="ye-nlp">
             <div class="media-frame">
               <img class="tile-photo" src="assets/projects/ye-nlp-cover.jpg" alt="" />
             </div>
             <p class="tile-title">Ye-NLP Reviews</p>
-            <p class="tile-sub">Yelp Dataset Challenge, 2018</p>
+            <p class="tile-sub">Web App, 2018</p>
           </button>
         </div>
-        <button class="rail-btn next" type="button" aria-label="Scroll projects right">›</button>
       </div>
 
       <h3>Art / Design</h3>
-      <div class="rail-wrap">
-        <button class="rail-btn prev" type="button" aria-label="Scroll projects left">‹</button>
-        <div class="rail">
+      <div class="project-grid-wrap">
+        <div class="project-grid">
           <button class="tile" type="button" data-project="peaches">
             <div class="media-frame">
-              <img class="tile-photo" src="assets/projects/peaches-logo.gif" alt="" />
+              <img class="tile-photo" src="assets/projects/peaches-logo.gif?v=5" alt="" />
             </div>
             <p class="tile-title">Peaches the Calico Cat</p>
-            <p class="tile-sub">Photography + NFTs, 2022</p>
+            <p class="tile-sub">Photography + Digital Art, 2022</p>
           </button>
           <button class="tile" type="button" data-project="great-pretender">
             <div class="media-frame">
@@ -100,13 +105,12 @@
           </button>
           <button class="tile" type="button" data-project="bull-city">
             <div class="media-frame">
-              <img class="tile-photo" src="assets/projects/bull-city-cover.png" alt="" />
+              <img class="tile-photo" src="assets/projects/bull-city-cover.png?v=3" alt="" />
             </div>
             <p class="tile-title">Bull City Garden</p>
-            <p class="tile-sub">Digital Vector, 2020</p>
+            <p class="tile-sub">Digital Art, 2020</p>
           </button>
         </div>
-        <button class="rail-btn next" type="button" aria-label="Scroll projects right">›</button>
       </div>
     </section>
 
@@ -140,32 +144,42 @@
   <footer class="site-footer">
     <p class="footer-credit">
       <span>Made with</span>
-      <span class="rotating-emoji" aria-hidden="true">
+      <span class="footer-emoji rotating-emoji" aria-hidden="true">
         <span>❤️</span>
         <span>🍵</span>
         <span>🤖</span>
       </span>
       <span class="sr-only">heart, tea, and robots</span>
       <span>by Jie Cai</span>
-      <span aria-hidden="true">🦙</span>
+      <span class="footer-emoji" aria-hidden="true">🦙</span>
     </p>
   </footer>
 
   <div class="modal" id="project-modal" hidden>
     <div class="modal-backdrop" data-close></div>
-    <button class="modal-nav prev" type="button" aria-label="Previous project">‹</button>
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" type="button" data-close aria-label="Close">×</button>
+      <div class="modal-toolbar">
+        <div class="modal-step">
+          <button class="modal-icon-btn prev" type="button" aria-label="Previous project">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.2 2.8 4.9 8l5.3 5.2" /></svg>
+          </button>
+          <button class="modal-icon-btn next" type="button" aria-label="Next project">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.8 2.8 11.1 8l-5.3 5.2" /></svg>
+          </button>
+        </div>
+        <button class="modal-icon-btn modal-close" type="button" data-close aria-label="Close">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5 12.5 12.5M12.5 3.5 3.5 12.5" /></svg>
+        </button>
+      </div>
       <h1 id="modal-title"></h1>
       <p class="lede" id="modal-lede"></p>
       <p class="modal-links" id="modal-links" hidden></p>
       <div class="prose" id="modal-prose"></div>
       <div class="modal-gallery" id="modal-gallery"></div>
     </div>
-    <button class="modal-nav next" type="button" aria-label="Next project">›</button>
   </div>
 
-  <script src="js/projects.js?v=19"></script>
-  <script src="js/albums.js?v=5"></script>
+  <script src="js/projects.js?v=28"></script>
+  <script src="js/albums.js?v=7"></script>
 </body>
 </html>
