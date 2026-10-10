@@ -144,20 +144,17 @@ h2 + h3 { margin-top: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: filter 0.35s ease;
+  transition: filter 0.5s ease;
 }
 
 .portrait,
-.tile-photo,
-.album-embed iframe {
+.tile-photo {
   filter: grayscale(1);
 }
 
 .media-frame:hover .portrait,
 .media-frame:hover .tile-photo,
-.tile:focus-visible .tile-photo,
-.album-embed:hover iframe,
-.album-embed:focus-within iframe {
+.tile:focus-visible .tile-photo {
   filter: grayscale(0);
 }
 
@@ -226,7 +223,7 @@ h2 + h3 { margin-top: 0; }
 .surprise-button {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   padding: 4px 0;
   border: 0;
   background: none;
@@ -243,23 +240,32 @@ h2 + h3 { margin-top: 0; }
   outline-offset: 3px;
 }
 
-.surprise-button svg {
-  width: 15px;
-  height: 15px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-}
-
-.surprise-button.is-refreshing svg {
-  animation: refresh-spin 0.4s ease;
+.surprise-disc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2em;
+  height: 1.2em;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", emoji, sans-serif;
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: 400;
+  font-variant-emoji: emoji;
+  line-height: 1;
+  transform-origin: center;
 }
 
 .album-embed {
   margin-top: var(--space-heading);
   min-height: 152px;
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+
+.album-embed:hover,
+.album-embed:focus-within,
+.album-embed.is-playing {
+  filter: grayscale(0);
 }
 
 .album-embed iframe {
@@ -267,12 +273,7 @@ h2 + h3 { margin-top: 0; }
   width: 100%;
   height: 152px;
   border: 0;
-  border-radius: 0;
-  transition: filter 0.35s ease;
-}
-
-@keyframes refresh-spin {
-  to { transform: rotate(360deg); }
+  border-radius: 12px;
 }
 
 .media-frame.emoji-frame {
@@ -285,7 +286,7 @@ h2 + h3 { margin-top: 0; }
   font-size: calc(var(--tile-size) * 0.42);
   line-height: 1;
   filter: grayscale(1);
-  transition: filter 0.35s ease;
+  transition: filter 0.5s ease;
 }
 
 .tile-title {
@@ -465,7 +466,7 @@ h2 + h3 { margin-top: 0; }
   display: grid;
   place-items: center;
   opacity: 0;
-  transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .rotating-emoji > span.is-active {

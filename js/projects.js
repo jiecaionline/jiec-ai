@@ -172,9 +172,9 @@ setupResponsiveColumns();
   if (!wave) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  requestAnimationFrame(() => {
+  window.setTimeout(() => {
     wave.classList.add("is-waving");
-  });
+  }, 500);
 
   wave.addEventListener("animationend", () => {
     wave.classList.remove("is-waving");

@@ -22,9 +22,18 @@ const spotifyAlbumIds = Object.freeze([
   "3rhOyuUoF8cpN1vPumdBSm"
 ]);
 
+const EMBED_HEIGHT = 152;
+const SPIN_DURATION_MS = 8000;
+
 const albumEmbed = document.querySelector("#album-embed");
 const surpriseButton = document.querySelector("#surprise-album");
+const surpriseDisc = document.querySelector(".surprise-disc");
+
+let embedController = null;
 let currentAlbumIndex = -1;
+let isPlaying = false;
+let discAnimation = null;
+let discRotationDeg = 0;
 
 function nextRandomIndex() {
   if (spotifyAlbumIds.length < 2) return 0;
@@ -32,24 +41,113 @@ function nextRandomIndex() {
   return (currentAlbumIndex + offset) % spotifyAlbumIds.length;
 }
 
-function showRandomAlbum(animate = true) {
+function albumUri(index) {
+  return `spotify:album:${spotifyAlbumIds[index]}`;
+}
+
+function rotationFromTransform(transform) {
+  if (!transform || transform === "none") return 0;
+  const match = transform.match(/^matrix\((.+)\)$/);
+  if (!match) return discRotationDeg;
+  const [a, b] = match[1].split(",").map((v) => Number(v.trim()));
+  return (Math.atan2(b, a) * 180) / Math.PI;
+}
+
+function captureDiscRotation() {
+  if (!surpriseDisc) return discRotationDeg;
+  discRotationDeg = rotationFromTransform(getComputedStyle(surpriseDisc).transform);
+  return discRotationDeg;
+}
+
+function stopDiscSpin() {
+  captureDiscRotation();
+  if (discAnimation) {
+    discAnimation.cancel();
+    discAnimation = null;
+  }
+  if (!surpriseDisc) return;
+  surpriseDisc.style.transform = `rotate(${discRotationDeg}deg)`;
+}
+
+function startDiscSpin() {
+  if (!surpriseDisc || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  captureDiscRotation();
+  if (discAnimation) {
+    discAnimation.cancel();
+    discAnimation = null;
+  }
+
+  surpriseDisc.style.transform = `rotate(${discRotationDeg}deg)`;
+  discAnimation = surpriseDisc.animate(
+    [
+      { transform: `rotate(${discRotationDeg}deg)` },
+      { transform: `rotate(${discRotationDeg + 360}deg)` },
+    ],
+    {
+      duration: SPIN_DURATION_MS,
+      iterations: Infinity,
+      easing: "linear",
+    }
+  );
+}
+
+function setPlaying(nextPlaying) {
+  const next = Boolean(nextPlaying);
+  if (next === isPlaying) return;
+
+  if (next) startDiscSpin();
+  else stopDiscSpin();
+
+  isPlaying = next;
+  albumEmbed?.classList.toggle("is-playing", next);
+}
+
+function showRandomAlbum() {
+  if (!embedController || spotifyAlbumIds.length === 0) return;
+
+  setPlaying(false);
+  currentAlbumIndex = nextRandomIndex();
+  embedController.loadUri(albumUri(currentAlbumIndex));
+}
+
+function bindEmbedController(controller) {
+  embedController = controller;
+
+  controller.addListener("playback_update", (event) => {
+    setPlaying(!event.data.isPaused);
+  });
+
+  controller.addListener("playback_started", () => {
+    setPlaying(true);
+  });
+}
+
+function initSpotifyEmbed(IFrameAPI) {
   if (!albumEmbed || spotifyAlbumIds.length === 0) return;
 
   currentAlbumIndex = nextRandomIndex();
-  const iframe = document.createElement("iframe");
-  iframe.src = `https://open.spotify.com/embed/album/${spotifyAlbumIds[currentAlbumIndex]}?utm_source=generator`;
-  iframe.title = "Spotify album player";
-  iframe.loading = "lazy";
-  iframe.allowFullscreen = true;
-  iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
-  albumEmbed.replaceChildren(iframe);
+  const host = document.createElement("div");
+  albumEmbed.replaceChildren(host);
 
-  if (animate && surpriseButton) {
-    surpriseButton.classList.remove("is-refreshing");
-    void surpriseButton.offsetWidth;
-    surpriseButton.classList.add("is-refreshing");
-  }
+  IFrameAPI.createController(
+    host,
+    {
+      uri: albumUri(currentAlbumIndex),
+      width: "100%",
+      height: EMBED_HEIGHT,
+    },
+    bindEmbedController
+  );
 }
 
 surpriseButton?.addEventListener("click", () => showRandomAlbum());
-showRandomAlbum(false);
+
+window.onSpotifyIframeApiReady = initSpotifyEmbed;
+
+const spotifyApiScript = document.createElement("script");
+spotifyApiScript.src = "https://open.spotify.com/embed/iframe-api/v1";
+spotifyApiScript.async = true;
+document.body.appendChild(spotifyApiScript);
