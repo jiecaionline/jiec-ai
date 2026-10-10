@@ -1,25 +1,27 @@
+// Spotify album embeds via the official iFrame API.
+// Full-length playback requires the visitor to be logged into Spotify Premium
+// in their browser (album and track embeds share that rule).
 const spotifyAlbumIds = Object.freeze([
-  "3qGInqGfOePTekb0y7AZ4s",
-  "6WlGOgNNtpwFt2gfRFfqgZ",
-  "5861K3sQgAwu1sswhe5Gw8",
-  "1HMLpmZAnNyl9pxvOnTovV",
-  "2FwpEC226o3WpXoptGbk85",
-  "2IAVHJdaRPFA6MQqXHoG75",
-  "7iwGw8ob3YLqZrbKzGFnHi",
-  "09mWpzpUOSjjvK2iNqEIYn",
-  "1QhonXpNQq8wrGEKX0ofbk",
-  "1jpUMnKpRlng1OJN7LJauV",
-  "1Gi6ij4Jxc4qE35i3I0gqS",
-  "5EYKrEDnKhhcNxGedaRQeK",
-  "4NZWRpoMuXaHU7csTjWdB5",
-  "22MbdINYz4lQ1Y087qG7YO",
-  "392p3shh2jkxUxY2VHvlH8",
-  "08ipn1MH7xqgoqhUbtvCTy",
-  "46jYkyZi8Ql9jfuJ2IQ8vF",
-  "2gwNU1WsZEOcCSyKHsXKs5",
-  "1nAQbHeOWTfQzbOoFrvndW",
-  "0fAfTDRDjfWjs4YryqQARn",
-  "3rhOyuUoF8cpN1vPumdBSm"
+  "3qGInqGfOePTekb0y7AZ4s", // ADÉLA — Ain't In LA
+  "6WlGOgNNtpwFt2gfRFfqgZ", // Victoria Monét — JAGUAR II
+  "5861K3sQgAwu1sswhe5Gw8", // SG Lewis — AudioLust & HigherLove
+  "1HMLpmZAnNyl9pxvOnTovV", // NewJeans — NewJeans 1st EP 'New Jeans'
+  "2FwpEC226o3WpXoptGbk85", // MAX — Colour Vision
+  "2IAVHJdaRPFA6MQqXHoG75", // Gryffin — Gravity
+  "7iwGw8ob3YLqZrbKzGFnHi", // 6LACK — FREE 6LACK
+  "09mWpzpUOSjjvK2iNqEIYn", // Olly Alexander (Years & Years) — Communion (Deluxe)
+  "1QhonXpNQq8wrGEKX0ofbk", // WALK THE MOON — Walk The Moon
+  "1jpUMnKpRlng1OJN7LJauV", // Lady Gaga — The Fame
+  "1Gi6ij4Jxc4qE35i3I0gqS", // XG — SHOOTING STAR
+  "5EYKrEDnKhhcNxGedaRQeK", // Ariana Grande — eternal sunshine
+  "4NZWRpoMuXaHU7csTjWdB5", // Flume — Skin
+  "22MbdINYz4lQ1Y087qG7YO", // AlunaGeorge — Body Music
+  "392p3shh2jkxUxY2VHvlH8", // Frank Ocean — channel ORANGE
+  "08ipn1MH7xqgoqhUbtvCTy", // Disclosure — Caracal (Deluxe)
+  "46jYkyZi8Ql9jfuJ2IQ8vF", // thủy — wings
+  "2gwNU1WsZEOcCSyKHsXKs5", // SG Lewis — Dusk
+  "1nAQbHeOWTfQzbOoFrvndW", // Doja Cat — Planet Her
+  "0fAfTDRDjfWjs4YryqQARn", // Bella Poarch — Stay Gone
 ]);
 
 const EMBED_HEIGHT = 152;
@@ -41,8 +43,9 @@ function nextRandomIndex() {
   return (currentAlbumIndex + offset) % spotifyAlbumIds.length;
 }
 
-function albumUri(index) {
-  return `spotify:album:${spotifyAlbumIds[index]}`;
+function albumEntity(index) {
+  const id = spotifyAlbumIds[index];
+  return `https://open.spotify.com/album/${id}?theme=0`;
 }
 
 function rotationFromTransform(transform) {
@@ -110,7 +113,11 @@ function showRandomAlbum() {
 
   setPlaying(false);
   currentAlbumIndex = nextRandomIndex();
-  embedController.loadUri(albumUri(currentAlbumIndex));
+  if (typeof embedController.loadEntity === "function") {
+    embedController.loadEntity(albumEntity(currentAlbumIndex));
+  } else {
+    embedController.loadUri(`spotify:album:${spotifyAlbumIds[currentAlbumIndex]}`);
+  }
 }
 
 function bindEmbedController(controller) {
@@ -135,7 +142,7 @@ function initSpotifyEmbed(IFrameAPI) {
   IFrameAPI.createController(
     host,
     {
-      uri: albumUri(currentAlbumIndex),
+      url: albumEntity(currentAlbumIndex),
       width: "100%",
       height: EMBED_HEIGHT,
     },

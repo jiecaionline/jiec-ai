@@ -309,6 +309,10 @@ h2 + h3 { margin-top: 0; }
   color: var(--muted);
 }
 
+.tile-sub.album-note {
+  margin-top: var(--space-stack);
+}
+
 .modal {
   position: fixed;
   inset: 0;
