@@ -505,6 +505,7 @@ h2 + h3 { margin-top: 0; }
   }
 
   .portrait-frame {
+    order: -1;
     width: min(42%, 160px);
   }
 
