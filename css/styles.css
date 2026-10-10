@@ -403,6 +403,18 @@ h2 + h3 { margin-top: 0; }
   width: 100%;
 }
 
+.modal-gallery.is-square-pair {
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.modal-gallery.is-square-pair img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #fff;
+}
+
 .prose p { margin: 0 0 12px; }
 
 .contact-list li {

@@ -59,9 +59,10 @@ const projects = {
     html: `<p>I designed a logo for Bull City Community Garden (collaboration between Sustainable Duke and the city of Durham, NC). The logo incorporates Durham's iconic "Bull City" hand gesture. The logo was first drawn on my iPad using Procreate, then translated into a vector using Adobe Illustrator.</p>
       <p>The logo is featured on Bull City Community Garden's <a href="https://X.com/bullcitygarden" target="_blank" rel="noreferrer">X</a> account page.</p>`,
     images: [
-      { src: "assets/projects/bull-city-black.jpg", alt: "Bull City Community Garden logo, black" },
-      { src: "assets/projects/bull-city-green.jpg", alt: "Bull City Community Garden logo, green" },
+      { src: "assets/projects/bull-city-black.jpg?v=4", alt: "Bull City Community Garden logo, black" },
+      { src: "assets/projects/bull-city-green.jpg?v=4", alt: "Bull City Community Garden logo, green" },
     ],
+    galleryClass: "is-square-pair",
     links: [{ href: "https://X.com/bullcitygarden", label: "X" }],
   },
 };
@@ -104,6 +105,8 @@ function showProject(id) {
   ledeEl.textContent = project.lede;
   renderLinks(project);
   proseEl.innerHTML = project.html;
+  galleryEl.className = "modal-gallery";
+  if (project.galleryClass) galleryEl.classList.add(project.galleryClass);
   galleryEl.innerHTML = project.images
     .map((img) => `<img src="${img.src}" alt="${img.alt}">`)
     .join("");
