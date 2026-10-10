@@ -8,11 +8,11 @@ const projects = {
     links: [{ href: "https://github.com/jiecai1997/duke-datathon-2018-team-22", label: "Github" }],
   },
   "robinhood-whm": {
-    title: "Robinhood Women Investors",
+    title: "Robinhood Women Users",
     lede: "Publications, 2021",
-    html: `<p>I created data narratives for articles published during Robinhood's 2021 Women's History Month, focusing on the growth and financial empowerment of Robinhood's women customers. These articles received media coverage from news outlets such as Bloomberg.</p>
+    html: `<p>I created data narratives for articles published during Robinhood's 2021 Women's History Month, focusing on the growth and financial empowerment of Robinhood's women users. These articles received media coverage from news outlets such as Bloomberg.</p>
       <p>I worked cross-functionally with communications, legal and business operation teams to construct narratives, gather data points and review writing to ensure quality content.</p>
-      <div class="callout">The number of women Robinhood customers nearly quadrupled between February 2020 and February 2021. In other words, that is a 369 percent year-over-year increase in women using the Robinhood platform, and now women make up nearly 30 percent of active Robinhood customers.</div>`,
+      <div class="callout">The number of women Robinhood users nearly quadrupled between February 2020 and February 2021. In other words, that is a 369 percent year-over-year increase in women using the Robinhood platform, and now women make up nearly 30 percent of active Robinhood users.</div>`,
     images: [],
     links: [
       { href: "https://robinhood.com/us/en/newsroom/lets-talk-about-women-and-investing/", label: "Women and Investing" },
@@ -46,7 +46,7 @@ const projects = {
   },
   peaches: {
     title: "Peaches the Calico Cat",
-    lede: "Photography + Digital Art, 2022",
+    lede: "Digital Photo + Art, 2022",
     html: `<p>Peaches was one of Duke University’s calico cats and campus icons. Unfortunately, she was fatally struck by a car on Aug 17, 2022. I created this collection for a good cause in her honor.</p>
       <p>Peaches the Calico Cat collection contains 40 NFTs based on photos I’ve captured of Peaches over my college years. I was blessed to live nearby Peaches’ favorite spot on campus. I’d give her plenty of pets and cuddles whenever I saw her around — she has even ventured into my dorm room a few times!</p>
       <p>All proceeds from sales (including 5% creator fees, excluding 2.5% platform fee and variable gas fees) were donated to a combination of Peaches’ memorial fund, Mamabean’s (another Duke resident cat) wellness fund, and individual animal shelters. Overall, the project raised $600+ dollars!</p>`,
