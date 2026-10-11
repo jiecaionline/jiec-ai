@@ -511,7 +511,7 @@ h2 + h3 { margin-top: 0; }
 
   .about {
     grid-template-columns: 1fr;
-    gap: var(--space-group);
+    gap: var(--space-section);
   }
 
   .about h1 {
@@ -521,7 +521,7 @@ h2 + h3 { margin-top: 0; }
 
   .portrait-frame {
     order: -1;
-    width: 72px;
+    width: var(--tile-size);
   }
 
   .experience-list li {
